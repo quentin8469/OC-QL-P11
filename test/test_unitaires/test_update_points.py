@@ -25,6 +25,7 @@ def test_good_update_points_after_reservation(client):
                           )
     update_points = int(server.clubs[0]['points'])
     assert club_points != update_points
+    assert reponse.status_code == 200
 
 
 
@@ -39,7 +40,9 @@ def test_bad_update_points_after_reservation(client):
     reponse = client.post('/purchasePlaces', 
                           data={'club': 'Simply Lift', 
                                 'competition': competition['name'], 
-                                'numberOfPlaces': competition['numberOfPlaces']}
+                                'numberOfPlaces': competition['numberOfPlaces'],
+                                'places': 5,}
                           )
     update_points = club_points
     assert club_points == update_points
+    assert reponse.status_code == 200
