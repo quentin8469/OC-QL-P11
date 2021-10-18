@@ -9,7 +9,14 @@ def client():
     return clients
 
 
-def test_competitions_dates():
+def test_new_competitions_dates():
+    """
+    
+    """
+    pass
+
+
+def test_past_competitions_dates():
     """
     
     """
