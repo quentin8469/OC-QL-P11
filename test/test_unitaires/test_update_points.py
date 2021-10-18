@@ -23,6 +23,7 @@ def test_good_update_points_after_reservation(client):
                           )
     update_points = club_points
     assert club_points != update_points
+    assert reponse.status_code == 200
 
 
 
@@ -41,4 +42,5 @@ def test_bad_update_points_after_reservation(client):
                           )
     update_points = club_points
     assert club_points == update_points
+    assert reponse.status_code == 400
 
