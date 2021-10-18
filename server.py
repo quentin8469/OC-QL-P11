@@ -1,6 +1,6 @@
 import json
 from flask import Flask,render_template,request,redirect,flash,url_for
-
+import datetime
 
 def loadClubs():
     with open('clubs.json') as c:
@@ -43,12 +43,16 @@ def book(competition,club):
 
 @app.route('/purchasePlaces',methods=['POST'])
 def purchasePlaces():
+    date = datetime.today()
     competition = [c for c in competitions if c['name'] == request.form['competition']][0]
     club = [c for c in clubs if c['name'] == request.form['club']][0]
     placesRequired = int(request.form['places'])
     competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
     flash('Great-booking complete!')
-    return render_template('welcome.html', club=club, competitions=competitions)
+    if datetime.strptime(competitions[0]['date'], "%Y-%m-%d %H:%M:%S") < datetime.today():
+        return render_template('welcome.html', club=club, competitions=competitions, today=False)
+    
+    return render_template('welcome.html', club=club, competitions=competitions, today=True)
 
 
 # TODO: Add route for points display
