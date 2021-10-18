@@ -1,18 +1,27 @@
+import pytest
 import server
 
-server.app.config['TESTING'] = True
-client = server.app.test_client()
+
+@pytest.fixture
+def client():
+    server.app.config['TESTING'] = True
+    clients = server.app.test_client()
+    return clients
 
 
-def test_good_update_points_after_reservation():
+def test_good_update_points_after_reservation(client):
     """ """
-    club_points = 1
-    reponse = client.post('/purchasePlaces', data={'club': 'Simply Lift', 'competition': 'Spring Festival', 'numberOfPlaces': 10})
-    
-    assert reponse
+    club_points = server.clubs[0]['points']
+    print(club_points)
+    reponse = client.post('/purchasePlaces', data={'club': 'Simply Lift', 'competition': 'Spring Festival', 'numberOfPlaces': 25})
+    update_points = club_points
+    assert club_points != update_points
 
-def test_bad_update_points_after_reservation():
+
+def test_bad_update_points_after_reservation(client):
     """"""
-    reponse = client.post('/purchasePlaces', data={'club': 'Simply Lift', 'competition': 'Spring Festival', 'numberOfPlaces': 1})
-    assert reponse
+    club_points = 13
+    reponse = client.post('/purchasePlaces', data={'club': 'Simply Lift', 'competition': 'Spring Festival', 'numberOfPlaces': 25})
+    update_points = club_points
+    assert club_points == update_points
 
