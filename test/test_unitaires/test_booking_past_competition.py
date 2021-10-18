@@ -16,9 +16,10 @@ def test_new_competitions_dates(client):
     """
     date = datetime.today()
     date_competition = datetime.strptime(server.competitions[0]['date'], '%Y-%m-%d %H:%M:%S')
-    if date_competition > date :
-        assert date_competition == True
-
+    if date_competition < date:
+        today=True
+        assert today
+    
 
 def test_past_competitions_dates(client):
     """
@@ -26,10 +27,6 @@ def test_past_competitions_dates(client):
     """
     date = datetime.today()
     date_competition = datetime.strptime(server.competitions[0]['date'], "%Y-%m-%d %H:%M:%S")
-    print("faux1",date)
-    print(date_competition)
     if date_competition < date:
-        print("faux2",date)
-        print(date_competition)
-        assert date_competition == False
-    
+        today=False
+        assert today
