@@ -17,7 +17,7 @@ def test_more_than_12_places(client):
                          data={'club': club,
                                 'competition': competition['name'],
                                 'numberOfPlaces': competition['numberOfPlaces'],
-                                'places': 12,
+                                'places': 100,
                                })
     assert result.status_code == 200
 
