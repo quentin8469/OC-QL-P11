@@ -48,7 +48,6 @@ def purchasePlaces():
     placesRequired = int(request.form['places'])
     
     if placesRequired > 12:
-        competition['numberOfPlaces'] = competition['numberOfPlaces']
         flash('You cant take more than 12 places')
     else:
         competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
