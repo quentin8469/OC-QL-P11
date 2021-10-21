@@ -59,7 +59,7 @@ def purchasePlaces():
     if placesRequired > 12 :
         flash("You can't take more than 12 places")
     else:
-        if placesRequired < int(club['points']):
+        if placesRequired < int(club['points']) and int(competition['numberOfPlaces'])-placesRequired >= 0:
             competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
             club['points'] = int(club['points']) - placesRequired
             flash('Great-booking complete!')
