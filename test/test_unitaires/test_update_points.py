@@ -20,7 +20,7 @@ def test_good_update_points_after_reservation(client):
                           data={'club': 'Simply Lift', 
                                 'competition': competition['name'], 
                                 'numberOfPlaces': competition['numberOfPlaces'],
-                                'places': 5,
+                                'places': 2,
                                 }
                           )
     update_points = int(server.clubs[0]['points'])
