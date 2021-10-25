@@ -8,24 +8,29 @@ def test_unknow_email():
     """ """
     reponse = client.post('/showSummary',
                            data={'email': 'admin@bob.com'})
-    assert reponse
+    assert reponse.status_code == 302
 
 
 def test_empty_email():
     """ """
     reponse = client.post('/showSummary',
                            data={'email': ''})
-    assert reponse
+    assert reponse.status_code == 302
 
 
 def test_know_email():
     """"""
     reponse = client.post('/showSummary',
                            data={'email': 'john@simplylift.co'})
-    assert reponse
+    assert reponse.status_code == 200
 
 def test_not_a_email():
     """"""
     reponse = client.post('/showSummary',
                            data={'email': '1585d456qef'})
-    assert reponse
+    assert reponse.status_code == 302
+
+
+def test_logout():
+	reponse = client.get('/logout')
+	assert reponse.status_code == 302
