@@ -35,4 +35,9 @@ class HelloWorldUser(HttpUser):
         
         self.client.get("/book/" + self.competitions 
         + "/" + self.club, name="book")
-
+        
+    
+    @task
+    def logout(self):
+        """"""
+        self.client.get("/logout")
