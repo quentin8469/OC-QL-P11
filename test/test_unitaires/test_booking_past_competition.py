@@ -44,4 +44,5 @@ def test_booking_competition_good(client):
     club= server.clubs[0]['name']
     competition = server.competitions[0]['name']
     result = client.get(f'/book/{competition}/{club}')
+    
     assert result.status_code == 200
