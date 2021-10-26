@@ -1,11 +1,38 @@
 from locust import HttpUser, task, between
-import server
+from server import loadClubs, loadCompetitions
 
 class HelloWorldUser(HttpUser):
+    
     wait_time = between(1, 5)
+    competitions = loadCompetitions()[0]['name']
+    club = loadClubs()[0]["name"]
+    email = loadClubs()[0]["email"] 
     
     @task
     def index(self):
         """"""
         self.client.get("/")
+    
+    
+    @task
+    def connexion(self):
+        
+        self.client.post("/showSummary", data={"email": self.email}, name="showSummary")
+    
+    
+    @task
+    def purchase_places(self):
+        
+        self.client.post("/purchasePlaces", data={
+            "club": self.club,
+            "competition": self.competitions,
+            "places": 2,
+            }, name="purchasePlaces")
+
+
+    @task
+    def get_place(self):
+        
+        self.client.get("/book/" + self.competitions 
+        + "/" + self.club, name="book")
 
