@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for server.py: 89%</title>
+    <title>Coverage for server.py: 96%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,13 +18,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>server.py</b> :
-            <span class="pc_cov">89%</span>
+            <span class="pc_cov">96%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             56 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">50 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">6 missing</button>
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">54 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">2 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
@@ -95,10 +95,10 @@
     <p id="t41" class="pln"><span class="n"><a href="#t41">41</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t42" class="run"><span class="n"><a href="#t42">42</a></span><span class="t"><span class="op">@</span><span class="nam">app</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">'/book/&lt;competition>/&lt;club>'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t43" class="run"><span class="n"><a href="#t43">43</a></span><span class="t"><span class="key">def</span> <span class="nam">book</span><span class="op">(</span><span class="nam">competition</span><span class="op">,</span> <span class="nam">club</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t44" class="mis show_mis"><span class="n"><a href="#t44">44</a></span><span class="t">    <span class="nam">foundClub</span> <span class="op">=</span> <span class="op">[</span><span class="nam">c</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">clubs</span> <span class="key">if</span> <span class="nam">c</span><span class="op">[</span><span class="str">'name'</span><span class="op">]</span> <span class="op">==</span> <span class="nam">club</span><span class="op">]</span><span class="op">[</span><span class="num">0</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t45" class="mis show_mis"><span class="n"><a href="#t45">45</a></span><span class="t">    <span class="nam">foundCompetition</span> <span class="op">=</span> <span class="op">[</span><span class="nam">c</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">competitions</span> <span class="key">if</span> <span class="nam">c</span><span class="op">[</span><span class="str">'name'</span><span class="op">]</span> <span class="op">==</span> <span class="nam">competition</span><span class="op">]</span><span class="op">[</span><span class="num">0</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t46" class="mis show_mis"><span class="n"><a href="#t46">46</a></span><span class="t">    <span class="key">if</span> <span class="nam">foundClub</span> <span class="key">and</span> <span class="nam">foundCompetition</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t47" class="mis show_mis"><span class="n"><a href="#t47">47</a></span><span class="t">        <span class="key">return</span> <span class="nam">render_template</span><span class="op">(</span><span class="str">'booking.html'</span><span class="op">,</span><span class="nam">club</span><span class="op">=</span><span class="nam">foundClub</span><span class="op">,</span><span class="nam">competition</span><span class="op">=</span><span class="nam">foundCompetition</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t44" class="run"><span class="n"><a href="#t44">44</a></span><span class="t">    <span class="nam">foundClub</span> <span class="op">=</span> <span class="op">[</span><span class="nam">c</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">clubs</span> <span class="key">if</span> <span class="nam">c</span><span class="op">[</span><span class="str">'name'</span><span class="op">]</span> <span class="op">==</span> <span class="nam">club</span><span class="op">]</span><span class="op">[</span><span class="num">0</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t45" class="run"><span class="n"><a href="#t45">45</a></span><span class="t">    <span class="nam">foundCompetition</span> <span class="op">=</span> <span class="op">[</span><span class="nam">c</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">competitions</span> <span class="key">if</span> <span class="nam">c</span><span class="op">[</span><span class="str">'name'</span><span class="op">]</span> <span class="op">==</span> <span class="nam">competition</span><span class="op">]</span><span class="op">[</span><span class="num">0</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t46" class="run"><span class="n"><a href="#t46">46</a></span><span class="t">    <span class="key">if</span> <span class="nam">foundClub</span> <span class="key">and</span> <span class="nam">foundCompetition</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t47" class="run"><span class="n"><a href="#t47">47</a></span><span class="t">        <span class="key">return</span> <span class="nam">render_template</span><span class="op">(</span><span class="str">'booking.html'</span><span class="op">,</span><span class="nam">club</span><span class="op">=</span><span class="nam">foundClub</span><span class="op">,</span><span class="nam">competition</span><span class="op">=</span><span class="nam">foundCompetition</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t48" class="pln"><span class="n"><a href="#t48">48</a></span><span class="t">    <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t49" class="mis show_mis"><span class="n"><a href="#t49">49</a></span><span class="t">        <span class="nam">flash</span><span class="op">(</span><span class="str">"Something went wrong , please try again"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t50" class="mis show_mis"><span class="n"><a href="#t50">50</a></span><span class="t">        <span class="key">return</span> <span class="nam">render_template</span><span class="op">(</span><span class="str">'welcome.html'</span><span class="op">,</span> <span class="nam">club</span><span class="op">=</span><span class="nam">club</span><span class="op">,</span> <span class="nam">competitions</span><span class="op">=</span><span class="nam">competitions</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -137,7 +137,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.0.2</a>,
-            created at 2021-10-25 15:13 +0200
+            created at 2021-10-26 02:30 +0200
         </p>
     </div>
 </div>
