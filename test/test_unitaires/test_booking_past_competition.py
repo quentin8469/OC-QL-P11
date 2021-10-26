@@ -39,6 +39,7 @@ def test_past_competitions_dates(client):
                                })
     assert result.status_code == 200
     
+    
 def test_booking_competition_good(client):
     
     club= server.clubs[0]['name']
