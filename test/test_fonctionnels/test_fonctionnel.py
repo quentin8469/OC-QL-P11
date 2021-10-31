@@ -27,10 +27,20 @@ def test_user(client):
     reponse = client.post('/purchasePlaces',
                        data={'club': club['name'],
                              'competition': competition['name'],
-                             'places': '1'}
+                             'places': 1}
                        )
     updated_points = int(club['points'])
     assert reponse.status_code == 200
-    assert updated_points == 9
     assert updated_points != points
+    
+    
+    points = int(club['points'])
+    reponse = client.post('/purchasePlaces',
+                       data={'club': club['name'],
+                             'competition': competition['name'],
+                             'places': 13}
+                       )
+    updated_points = int(club['points'])
+    assert reponse.status_code == 200   
+    assert updated_points == points
     
