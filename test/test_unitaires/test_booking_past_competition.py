@@ -16,6 +16,7 @@ def test_new_competitions_dates(client):
     """
     club = server.clubs[0]['name']
     competition = server.competitions[0]
+    
     result = client.post('/purchasePlaces', 
                          data={'club': club,
                                 'competition': competition['name'],
